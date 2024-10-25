@@ -1,0 +1,20 @@
+# ProgramName|DownloadURL|InstallSwitches
+Audacity|https://github.com/audacity/audacity/releases/download/Audacity-3.6.4/audacity-win-3.6.4-64bit.exe|/S
+Shotcut|https://sourceforge.net/projects/shotcut/files/v24.09.13/shotcut-win64-240913.exe/download|/S
+OpenShot|https://github.com/OpenShot/openshot-qt/releases/download/v3.1.1/OpenShot-v3.1.1-x86_64.exe|/silent
+VLC|https://get.videolan.org/vlc/3.0.18/win64/vlc-3.0.18-win64.exe|/S
+Blender|https://download.blender.org/release/Blender3.6/blender-3.6.2-windows-x64.msi|/quiet
+GIMP|https://download.gimp.org/pub/gimp/v2.10/windows/gimp-2.10.34-setup.exe|/VERYSILENT
+Inkscape|https://inkscape.org/gallery/item/53697/inkscape-1.4_2024-10-11_86a8ad7-x64.msi|/quiet
+Upscayl|https://github.com/upscayl/upscayl/releases/download/v2.11.5/upscayl-2.11.5-win.exe|/S
+FreeCAD|https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21.2-WIN-x64-installer-1.exe|/S
+OrcaSlicer|https://github.com/SoftFever/OrcaSlicer/releases/download/v2.1.0/OrcaSlicer_Windows_Installer_V2.1.0.exe|/S
+Repetier-Server|https://download3.repetier.com/files/monitor/win/Repetier-Server Monitor Setup 1.4.7.exe|/S
+Arduino IDE|https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Windows_64bit.exe|/S
+Android Studio|https://redirector.gvt1.com/edgedl/android/studio/install/2022.3.1.20/android-studio-2022.3.1.20-windows.exe|/S
+VSCode|https://update.code.visualstudio.com/latest/win32-x64-user/stable|/verysilent
+VSCodium|https://github.com/VSCodium/vscodium/releases/download/1.82.2.23225/VSCodiumSetup-x64-1.82.2.23225.exe|/verysilent
+Geany|https://download.geany.org/geany-1.38_setup.exe|/S
+LibreOffice|https://ftp.osuosl.org/pub/tdf/libreoffice/stable/24.8.2/win/x86_64/LibreOffice_24.8.2_Win_x86-64.msi|/quiet
+Transmission|https://github.com/transmission/transmission/releases/download/4.0.6/transmission-4.0.6-x64.msi|/quiet
+Stellarium|https://github.com/Stellarium/stellarium/releases/download/v24.3/stellarium-24.3-qt6-win64.exe|/S
