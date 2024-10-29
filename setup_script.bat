@@ -1,3 +1,13 @@
+REM setup_script.bat
+REM Script to set up an Windows environment with various packages.
+REM Author: threeofthree
+REM Date: 2024-10-25
+REM Usage: setup_script.bat
+REM Note: Must run this script as administrator.
+
+REM This script is licensed under the MIT License.
+REM See the LICENSE file in the project root for license information.
+
 @echo off
 setlocal enabledelayedexpansion
 REM Windows Setup Script to Download Programs and Manage Java
