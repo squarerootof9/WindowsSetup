@@ -27,7 +27,7 @@ This script is intended to streamline the setup process on a new or existing Win
 5. [Logging](#logging)
 6. [Troubleshooting](#troubleshooting)
 7. [Important Notes](#important-notes)
-8. [License](#license)
+8. [Author and License](#author-and-license)
 
 ---
 
@@ -43,7 +43,6 @@ Before running the `setup_script.bat`, ensure that the following prerequisites a
 
    - The script relies on `s_wget.exe` to download files.
    - **Download `s_wget.exe`**:
-
      - You can download `s_wget.exe` from [Eternal Download Link](https://eternallybored.org/misc/wget/) or [GNU Wget for Windows](https://gnuwin32.sourceforge.net/packages/wget.htm).
      - Ensure that the downloaded `s_wget.exe` is placed either in the same directory as `setup_script.bat` or added to your system `PATH`.
 
@@ -278,9 +277,20 @@ Stellarium|https://github.com/Stellarium/stellarium/releases/download/v24.3/stel
 
 ---
 
-## License
+## Author and License
 
-This script is provided "as is" without warranty of any kind. Use it at your own risk. Ensure compliance with all software licenses and terms of use for the programs being installed.
+### Author
+
+- **Name**: threeofthree
+- **Date**: 2024-10-25
+
+### License
+
+This script is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the [LICENSE](LICENSE) file in the project root for license information.
+
+---
+
+**Note**: Please ensure that you include a `LICENSE` file in your project directory containing the full text of the MIT License. This is important for compliance with the license terms and for informing users of their rights regarding the software.
 
 ---
 
@@ -291,3 +301,5 @@ This script is provided "as is" without warranty of any kind. Use it at your own
 **Contact Information**:
 
 For questions, suggestions, or assistance, please reach out to the script maintainer or consult the documentation for the specific programs involved.
+
+---
