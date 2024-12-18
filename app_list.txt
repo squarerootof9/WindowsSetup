@@ -12,7 +12,7 @@ OrcaSlicer|https://github.com/SoftFever/OrcaSlicer/releases/download/v2.1.0/Orca
 Repetier-Server|https://download3.repetier.com/files/monitor/win/Repetier-Server Monitor Setup 1.4.7.exe|/S
 Arduino IDE|https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Windows_64bit.exe|/S
 Android Studio|https://redirector.gvt1.com/edgedl/android/studio/install/2024.2.1.12/android-studio-2024.2.1.12-windows.exe|/S
-VSCode|https://update.code.visualstudio.com/latest/win32-x64-user/stable|/verysilent
+VSCode|https://vscode.download.prss.microsoft.com/dbazure/download/stable/138f619c86f1199955d53b4166bef66ef252935c/VSCodeUserSetup-x64-1.96.0.exe|/verysilent
 VSCodium|https://github.com/VSCodium/vscodium/releases/download/1.82.2.23225/VSCodiumSetup-x64-1.82.2.23225.exe|/verysilent
 Geany|https://download.geany.org/geany-1.38_setup.exe|/S
 LibreOffice|https://ftp.osuosl.org/pub/tdf/libreoffice/stable/24.8.2/win/x86_64/LibreOffice_24.8.2_Win_x86-64.msi|/quiet
