@@ -1,10 +1,10 @@
 # ProgramName|DownloadURL|InstallSwitches
 Audacity|https://github.com/audacity/audacity/releases/download/Audacity-3.6.4/audacity-win-3.6.4-64bit.exe|/S
-Shotcut|https://sourceforge.net/projects/shotcut/files/v24.09.13/shotcut-win64-240913.exe/download|/S
+Shotcut|https://versaweb.dl.sourceforge.net/project/shotcut/v24.11.17/shotcut-win64-241117.exe|/S
 OpenShot|https://github.com/OpenShot/openshot-qt/releases/download/v3.1.1/OpenShot-v3.1.1-x86_64.exe|/silent
 VLC|https://get.videolan.org/vlc/3.0.18/win64/vlc-3.0.18-win64.exe|/S
 Blender|https://download.blender.org/release/Blender3.6/blender-3.6.2-windows-x64.msi|/quiet
-GIMP|https://download.gimp.org/pub/gimp/v2.10/windows/gimp-2.10.34-setup.exe|/VERYSILENT
+GIMP|https://forksystems.mm.fcix.net/gimp/gimp/v2.10/windows/gimp-2.10.38-setup-1.exe|/VERYSILENT
 Inkscape|https://inkscape.org/gallery/item/53697/inkscape-1.4_2024-10-11_86a8ad7-x64.msi|/quiet
 Upscayl|https://github.com/upscayl/upscayl/releases/download/v2.11.5/upscayl-2.11.5-win.exe|/S
 FreeCAD|https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21.2-WIN-x64-installer-1.exe|/S
