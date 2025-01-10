@@ -10,7 +10,7 @@ Upscayl|https://github.com/upscayl/upscayl/releases/download/v2.11.5/upscayl-2.1
 FreeCAD|https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21.2-WIN-x64-installer-1.exe|/S
 OrcaSlicer|https://github.com/SoftFever/OrcaSlicer/releases/download/v2.1.0/OrcaSlicer_Windows_Installer_V2.1.0.exe|/S
 Repetier-Server|https://download3.repetier.com/files/monitor/win/Repetier-Server Monitor Setup 1.4.7.exe|/S
-Arduino IDE|https://downloads.arduino.cc/arduino-ide/arduino-ide_2.2.1_Windows_64bit.exe|/S
+Arduino IDE|https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.4_Windows_64bit.exe|/S
 Android Studio|https://redirector.gvt1.com/edgedl/android/studio/install/2024.2.1.12/android-studio-2024.2.1.12-windows.exe|/S
 VSCode|https://vscode.download.prss.microsoft.com/dbazure/download/stable/138f619c86f1199955d53b4166bef66ef252935c/VSCodeUserSetup-x64-1.96.0.exe|/verysilent
 VSCodium|https://github.com/VSCodium/vscodium/releases/download/1.82.2.23225/VSCodiumSetup-x64-1.82.2.23225.exe|/verysilent
