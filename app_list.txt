@@ -11,6 +11,7 @@ FreeCAD|https://github.com/FreeCAD/FreeCAD/releases/download/0.21.2/FreeCAD-0.21
 OrcaSlicer|https://github.com/SoftFever/OrcaSlicer/releases/download/v2.1.0/OrcaSlicer_Windows_Installer_V2.1.0.exe|/S
 Repetier-Server|https://download3.repetier.com/files/monitor/win/Repetier-Server Monitor Setup 1.4.7.exe|/S
 Arduino IDE|https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.4_Windows_64bit.exe|/S
+Raspberry Pi Imager|https://downloads.raspberrypi.org/imager/imager_latest.exe|/S
 Android Studio|https://redirector.gvt1.com/edgedl/android/studio/install/2024.2.1.12/android-studio-2024.2.1.12-windows.exe|/S
 VSCode|https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user|/verysilent
 VSCodium|https://github.com/VSCodium/vscodium/releases/download/1.96.2.24355/VSCodiumSetup-x64-1.96.2.24355.exe|/verysilent
