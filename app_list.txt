@@ -27,6 +27,5 @@ GIT|https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.2/G
 OpenSSL|https://slproweb.com/download/Win64OpenSSL-3_4_0.msi|/quiet
 Gpg4win|https://files.gpg4win.org/gpg4win-4.4.0.exe|/S
 OpenSC|https://github.com/OpenSC/OpenSC/releases/download/0.26.1/OpenSC-0.26.1_win64.msi|/quiet
-Skype|https://download.skype.com/s4l/download/win/Skype-8.134.0.202.exe|/silent
 Node.js|https://nodejs.org/dist/v23.7.0/node-v23.7.0-x64.msi|/quiet
 OBS-Studio|https://cdn-fastly.obsproject.com/downloads/OBS-Studio-31.0.1-Windows-Installer.exe|/S
