@@ -12,8 +12,8 @@ OrcaSlicer|https://github.com/SoftFever/OrcaSlicer/releases/download/v2.1.0/Orca
 Repetier-Server|https://download3.repetier.com/files/monitor/win/Repetier-Server Monitor Setup 1.4.7.exe|/S
 Arduino IDE|https://downloads.arduino.cc/arduino-ide/arduino-ide_2.3.4_Windows_64bit.exe|/S
 Raspberry Pi Imager|https://downloads.raspberrypi.org/imager/imager_latest.exe|/S
-Android Studio|https://redirector.gvt1.com/edgedl/android/studio/install/2024.2.1.12/android-studio-2024.2.1.12-windows.exe|/S
-VSCode|https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user|/verysilent
+Android Studio|https://r2---sn-vgqsknzd.gvt1.com/edgedl/android/studio/install/2024.2.2.15/android-studio-2024.2.2.15-windows.exe?cms_redirect=yes&met=1741110717,&mh=x5&mip=96.60.48.45&mm=28&mn=sn-vgqsknzd&ms=nvh&mt=1741109759&mv=u&mvi=2&pl=22&rmhost=r3---sn-vgqsknzd.gvt1.com&rms=nvh,nvh&shardbypass=sd&smhost=r2---sn-vgqsknzz.gvt1.com|/S
+VSCode|https://vscode.download.prss.microsoft.com/dbazure/download/stable/6609ac3d66f4eade5cf376d1cb76f13985724bcb/VSCodeUserSetup-x64-1.98.0.exe|/verysilent
 VSCodium|https://github.com/VSCodium/vscodium/releases/download/1.96.2.24355/VSCodiumSetup-x64-1.96.2.24355.exe|/verysilent
 Geany|https://download.geany.org/geany-2.0_setup.exe|/S
 LibreOffice|https://ftp.osuosl.org/pub/tdf/libreoffice/stable/24.8.2/win/x86_64/LibreOffice_24.8.2_Win_x86-64.msi|/quiet
@@ -23,9 +23,10 @@ XCA|https://github.com/chris2511/xca/releases/download/RELEASE.2.8.0/xca-2.8.0-w
 Thunderbird|https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/128.5.2esr/win64/en-US/Thunderbird%20Setup%20128.5.2esr.exe|/silent
 VeraCrypt|https://launchpad.net/veracrypt/trunk/1.26.15/+download/VeraCrypt%20Setup%201.26.15.exe|/silent
 KDE Connect|https://download.kde.org/stable/release-service/24.02.0/windows/kdeconnect-kde-release_24.02-3692-windows-cl-msvc2022-x86_64.exe|/S
-GIT|https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.2/Git-2.47.1.2-64-bit.exe|/silent
-OpenSSL|https://slproweb.com/download/Win64OpenSSL-3_4_0.msi|/quiet
+GIT|https://github.com/git-for-windows/git/releases/download/v2.48.1.windows.1/Git-2.48.1-64-bit.exe|/VERYSILENT /NORESTART /NOCANCEL /SP- /CLOSEAPPLICATIONS /RESTARTAPPLICATIONS /COMPONENTS="icons,ext\reg\shellhere,assoc,assoc_sh"
+OpenSSL|https://slproweb.com/download/Win64OpenSSL-3_4_1.msi|/quiet
 Gpg4win|https://files.gpg4win.org/gpg4win-4.4.0.exe|/S
 OpenSC|https://github.com/OpenSC/OpenSC/releases/download/0.26.1/OpenSC-0.26.1_win64.msi|/quiet
 Node.js|https://nodejs.org/dist/v23.7.0/node-v23.7.0-x64.msi|/quiet
 OBS-Studio|https://cdn-fastly.obsproject.com/downloads/OBS-Studio-31.0.1-Windows-Installer.exe|/S
+KiCAD|https://github.com/KiCad/kicad-source-mirror/releases/download/8.0.8/kicad-8.0.8-x86_64.exe|/silent
