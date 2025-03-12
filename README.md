@@ -1,14 +1,21 @@
+Here is the updated `README.md` with the correct menu and options:
+
+---
+
 # WindowsSetup
 
 # Windows Setup Scripts
 
 ## Overview
 
-The `setup_script.ps1` is a PowerShell script designed to automate the installation and removal of Java, as well as download and install a list of predefined programs on a Windows system. The script provides a menu-driven interface that allows users to:
+The `setup_script.ps1` is a PowerShell script designed to automate the installation and removal of software, configure system settings, and manage Windows features. It provides a menu-driven interface that allows users to:
 
 - Add or remove Java.
-- Download and install all programs from a configured list.
-- Select and install individual programs from that list.
+- Download and install predefined programs.
+- Apply registry settings.
+- Enable or disable Windows features.
+- Disable OneDrive.
+- Manage the OpenSSH server daemon.
 - Exit the script.
 
 By automating these tasks, the script streamlines the setup process on a new or existing Windows machine, saving time and reducing manual effort.
@@ -26,6 +33,10 @@ By automating these tasks, the script streamlines the setup process on a new or 
    - [Main Menu Options](#main-menu-options)  
    - [Adding or Removing Java](#adding-or-removing-java)  
    - [Adding Programs](#adding-programs)  
+   - [Applying Registry Settings](#applying-registry-settings)  
+   - [Adding Windows Features](#adding-windows-features)  
+   - [Disabling OneDrive](#disabling-onedrive)  
+   - [Managing OpenSSH Daemon](#managing-openssh-daemon)  
 5. [Configuration Files](#configuration-files)  
    - [`app_list.txt` Format](#app_listtxt-format)  
 6. [Logging](#logging)  
@@ -43,7 +54,7 @@ Before running the `setup_script.ps1`, ensure that the following prerequisites a
    The script is designed for Windows environments.
 
 2. **Administrative Privileges**:  
-   The script must be run with administrative rights to install software and modify system environment variables.
+   The script must be run with administrative rights to install software, modify registry settings, and enable/disable Windows features.
 
 3. **Internet Connection**:  
    Required to download Java and the listed programs.
@@ -54,7 +65,7 @@ Before running the `setup_script.ps1`, ensure that the following prerequisites a
 
 1. **Download the Script and Configuration File**:  
    - Place `setup_script.ps1` in a directory of your choice.
-   - Ensure that `app_list.txt` is in the **same directory** as `setup_script.ps1`.
+   - Ensure that `app_list.txt` is in the **same directory** as `setup_script.ps1` (if applicable).
 
 2. **Run PowerShell as Administrator**:  
    - Right-click on PowerShell and select **"Run as administrator"**.
@@ -123,9 +134,13 @@ Setup Script Menu
 1) Add/Remove Java
 2) Add All Programs
 3) Add Individual Programs
-4) Exit
+4) Apply Registry Settings
+5) Add Windows Features (Telnet Client, XPS)
+6) Disable OneDrive
+7) Manage SSH Daemon (OpenSSH-Server)
+8) Exit
 --------------------------------------------
-Please select an option [1-4]:
+Please select an option [1-8]:
 ```
 
 Enter the number corresponding to the action you wish to perform.
@@ -148,9 +163,37 @@ Enter the number corresponding to the action you wish to perform.
 
 The script will download and install the chosen programs silently if possible, logging successes and failures.
 
+### Applying Registry Settings
+
+**Option 4: Apply Registry Settings**  
+- Applies predefined registry settings for system optimizations.
+- Changes may include enabling/disabling features, modifying security settings, or adjusting performance parameters.
+- Some settings may require a system restart to take effect.
+
+### Adding Windows Features
+
+**Option 5: Add Windows Features (Telnet Client, XPS)**  
+- Enables optional Windows features such as the Telnet client and XPS viewer.
+- Useful for troubleshooting or compatibility with legacy applications.
+- Requires an active internet connection to install features.
+
+### Disabling OneDrive
+
+**Option 6: Disable OneDrive**  
+- Disables OneDrive integration in Windows.
+- Prevents OneDrive from automatically launching and syncing files.
+- Useful for users who do not use OneDrive or prefer alternative cloud storage solutions.
+
+### Managing OpenSSH Daemon
+
+**Option 7: Manage SSH Daemon (OpenSSH-Server)**  
+- Installs, enables, or disables the OpenSSH server on Windows.
+- Allows remote SSH access to the system for secure remote management.
+- Provides options to start, stop, or check the status of the SSH service.
+
 ### Exiting the Script
 
-**Option 4: Exit**  
+**Option 8: Exit**  
 - Ends the script execution.
 
 ---
@@ -194,38 +237,13 @@ ProgramName|DownloadURL|InstallSwitches
 2. **Execution Policy Issues**:
    - If the script won't run, adjust the execution policy as described in [Running PowerShell Scripts](#running-powershell-scripts).
 
-3. **Program Fails to Download or Install**:
-   - Check the URLs in `app_list.txt`.
-   - Ensure you have a stable internet connection.
-   - Review `setup_script.log` for error messages.
-   - Verify silent install switches for each program.
+3. **Feature Installation Issues**:
+   - Ensure you have an active internet connection.
+   - Restart the system if necessary.
 
-4. **Unknown Installer Types**:
-   - The script attempts to handle `.exe` and `.msi` files.
-   - If an installer uses a different extension or special parameters, update the script or switches accordingly.
-
-5. **Java Installation Issues**:
-   - Check if the download URL for Java is correct and accessible.
-   - Ensure sufficient disk space on `C:\`.
-
-6. **Environment Variables Not Updated**:
-   - After adding or removing Java, restart or log off/log on to apply changes.
-
----
-
-## Important Notes
-
-- **Modify `app_list.txt` with Caution**:
-  - Backup the original file before making changes.
-  - Ensure correct formatting and URLs.
-
-- **Use Safe Execution Policies**:
-  - Consider `RemoteSigned` or `AllSigned` for safer script execution.
-  - Avoid `Unrestricted` unless you understand the risks.
-
-- **License Agreements**:
-  - By installing software using this script, you agree to the license terms of each program.
-  - Review each application's license if necessary.
+4. **Java or Program Installation Issues**:
+   - Check `app_list.txt` for correct URLs and install switches.
+   - Ensure sufficient disk space and stable internet connectivity.
 
 ---
 
