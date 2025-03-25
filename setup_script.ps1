@@ -394,7 +394,7 @@ Function ApplySettings {
     #Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarDa" -Type DWord -Value 0
 
     # Personalization > Taskbar > Other system tray icons > Task Manager
-    Set-ItemProperty -Path "HKCU:\Control Panel\NotifyIconSettings\10659982090346756599" -Name "IsPromoted" -Type DWord -Value 1
+    # Set-ItemProperty -Path "HKCU:\Control Panel\NotifyIconSettings\10659982090346756599" -Name "IsPromoted" -Type DWord -Value 1
 
     ####
     ## Accessibility
