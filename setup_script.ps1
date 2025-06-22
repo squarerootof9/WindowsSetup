@@ -475,7 +475,7 @@ Function ApplySettings {
     tzutil /s "Eastern Standard Time"
 
     Write-Host "Setting Realtime to Universal (BIOS should be set to GMT/UTC)..."
-    #reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /t REG_DWORD /d 1 /f
+    reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation" /v RealTimeIsUniversal /t REG_DWORD /d 1 /f
 
     # Show file extensions
     Write-Host "Setting file extensions to be visible..."
