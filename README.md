@@ -1,264 +1,227 @@
-Here is the updated `README.md` with the correct menu and options:
-
----
-
 # WindowsSetup
 
 # Windows Setup Scripts
 
 ## Overview
 
-The `setup_script.ps1` is a PowerShell script designed to automate the installation and removal of software, configure system settings, and manage Windows features. It provides a menu-driven interface that allows users to:
+`setup_script.ps1` is a menu-driven PowerShell setup and maintenance utility for Windows 11. It is designed to reduce the repetitive work involved in preparing a new installation or bringing an existing machine into a preferred configuration.
 
-- Add or remove Java.
-- Download and install predefined programs.
-- Apply registry settings.
-- Enable or disable Windows features.
-- Disable OneDrive.
-- Manage the OpenSSH server daemon.
-- Exit the script.
+The script can:
 
-By automating these tasks, the script streamlines the setup process on a new or existing Windows machine, saving time and reducing manual effort.
+- Install a curated base set of applications through WinGet.
+- Install selected applications individually or install the complete application set.
+- Manage development tools, Java, Node.js, browsers, and VS Code extensions.
+- Apply Windows and registry preferences.
+- Configure optional Windows features.
+- Manage OneDrive, OpenSSH Server, Remote Desktop, and encrypted DNS settings.
+- Run application updates and Windows Update.
+- Install graphics, media, development, and 3D-printing software.
+- Display useful system information such as the embedded Windows product key.
+
+Some options make system-wide changes and therefore require an elevated PowerShell session. Review the script before running it and use only the sections appropriate for the machine being configured.
+
+### Optional: create a local account during Windows setup
+
+During the Windows 11 out-of-box setup, Microsoft may require an internet connection and Microsoft account sign-in. To create a local account instead, press **Shift+F10** to open Command Prompt, then run:
+
+```cmd
+start ms-cxh:localonly
+```
+
+This opens the local-account setup flow. Availability may depend on the Windows 11 build being installed.
+
+[Microsoft Windows 11 Download Page](https://www.microsoft.com/en-us/software-download/windows11)
 
 ---
 
 ## Table of Contents
 
-1. [Prerequisites](#prerequisites)  
-2. [Setup Instructions](#setup-instructions)  
-3. [Running PowerShell Scripts](#running-powershell-scripts)  
-   - [Creating the Script File](#creating-the-script-file)  
-   - [Setting the Execution Policy](#setting-the-execution-policy)  
-4. [Usage Instructions](#usage-instructions)  
-   - [Main Menu Options](#main-menu-options)  
-   - [Adding or Removing Java](#adding-or-removing-java)  
-   - [Adding Programs](#adding-programs)  
-   - [Applying Registry Settings](#applying-registry-settings)  
-   - [Adding Windows Features](#adding-windows-features)  
-   - [Disabling OneDrive](#disabling-onedrive)  
-   - [Managing OpenSSH Daemon](#managing-openssh-daemon)  
-5. [Configuration Files](#configuration-files)  
-   - [`app_list.txt` Format](#app_listtxt-format)  
-6. [Logging](#logging)  
-7. [Troubleshooting](#troubleshooting)  
-8. [Important Notes](#important-notes)  
-9. [Author and License](#author-and-license)
+1. [Prerequisites](#prerequisites)
+2. [Download, Setup, and Running](#download-setup-and-running)
+3. [Execution Policy](#execution-policy)
+4. [Usage Instructions](#usage-instructions)
+   - [Main Menu Options](#main-menu-options)
+5. [Logging](#logging)
+6. [Troubleshooting](#troubleshooting)
+7. [Author and License](#author-and-license)
 
 ---
 
 ## Prerequisites
 
-Before running the `setup_script.ps1`, ensure that the following prerequisites are met:
+Before running `setup_script.ps1`, make sure the following are available:
 
-1. **Windows Operating System**:  
-   The script is designed for Windows environments.
+- **Windows 11**
+- **An administrator account**
+- **An active internet connection**
+- **WinGet**, which is included with current Windows 11 installations through App Installer
 
-2. **Administrative Privileges**:  
-   The script must be run with administrative rights to install software, modify registry settings, and enable/disable Windows features.
-
-3. **Internet Connection**:  
-   Required to download Java and the listed programs.
+The script performs software installation, registry changes, Windows feature management, service configuration, and other system-wide tasks, so it must be run from an elevated PowerShell window.
 
 ---
 
-## Setup Instructions
+## Download, Setup, and Running
 
-1. **Download the Script and Configuration File**:  
-   - Place `setup_script.ps1` in a directory of your choice.
-   - Ensure that `app_list.txt` is in the **same directory** as `setup_script.ps1` (if applicable).
+The easiest way to get the complete project is to download the repository as a ZIP file from GitHub.
 
-2. **Run PowerShell as Administrator**:  
-   - Right-click on PowerShell and select **"Run as administrator"**.
+1. Open the repository page.
+2. Select **Code**.
+3. Choose **Download ZIP**.
+4. Extract the ZIP file to a convenient location.
+5. Open the extracted folder.
+6. Open PowerShell with **Run as administrator**.
+7. Navigate to the extracted project folder:
+
+   ```powershell
+   cd path\to\WindowsSetup
+   ```
+
+8. Run the script:
+
+   ```powershell
+   .\setup_script.ps1
+   ```
+
+Keep the files from the ZIP together in the same folder so supporting files, such as the VS Code extension list, remain available to the script.
 
 ---
 
-## Running PowerShell Scripts
+## Execution Policy
 
-### Creating the Script File
+PowerShell may block script execution depending on the current system policy.
 
-If you haven't already:
+Check the current policy:
 
-- Open a text editor (e.g., Notepad) or an IDE (e.g., Visual Studio Code).
-- Write or copy the `setup_script.ps1` content into the editor.
-- Save the file with a `.ps1` extension (e.g., `setup_script.ps1`).
+```powershell
+Get-ExecutionPolicy
+```
 
-### Setting the Execution Policy
+Temporarily allow the script for the current PowerShell session:
 
-By default, PowerShell may restrict running scripts. Adjust the execution policy as needed:
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
 
-- **Check the current policy**:
+Or allow locally created scripts for the current user:
 
-  ```powershell
-  Get-ExecutionPolicy
-  ```
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
-- **Temporarily change the execution policy for the current session**:
-
-  ```powershell
-  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-  ```
-
-- **Permanently allow scripts to run for the current user**:
-
-  ```powershell
-  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-  ```
-
-**Note**:  
-Use `RemoteSigned` or `AllSigned` for safety. Avoid `Unrestricted` unless you understand the risks.
+`RemoteSigned` is generally preferable to `Unrestricted`. Review scripts before running them, especially when they make administrative changes.
 
 ---
 
 ## Usage Instructions
 
-Once you've set the execution policy and opened an elevated PowerShell session:
+After launching the script, enter the number for the task you want to run. Some menu items open additional submenus for development tools and browsers.
 
-1. **Navigate to the Script Directory**:  
-   ```powershell
-   cd path\to\your\script
-   ```
-
-2. **Run the Script**:  
-   ```powershell
-   ./setup_script.ps1
-   ```
+The script is designed so individual options can be run separately. You do not need to run every item, and many options are safe to run again when maintaining an existing Windows installation.
 
 ### Main Menu Options
 
 Upon running the script, you will see the following menu:
 
 ```
---------------------------------------------
-Setup Script Menu
---------------------------------------------
-1) Add/Remove Java
-2) Add All Programs
-3) Add Individual Programs
-4) Apply Registry Settings
-5) Add Windows Features (Telnet Client, XPS)
-6) Disable OneDrive
-7) Manage SSH Daemon (OpenSSH-Server)
-8) Exit
---------------------------------------------
-Please select an option [1-8]:
+────────────────────────────────────────────
+           Windows Setup Menu
+────────────────────────────────────────────
+Applications
+1) Add Base Programs
+2) Add Individual Programs
+3) Install btop
+4) Install Balena-Etcher
+5) Install Veracrypt
+6) Install LibreOffice
+7) Update Apps
+
+Development
+8) Development Applications
+9) Add/Remove Java
+10) Add/Remove Node.js®
+
+System Configuration
+11) Apply Registry Settings
+12) Add Windows Features (Telnet Client, XPS)
+13) Disable OneDrive
+14) Browser Applications
+15) Manage SSH Daemon (OpenSSH-Server)
+16) Manage RDP
+17) Manage CloudFlare/Quad9 TLS DNS (testing)
+
+Graphics & 3d Printing
+18) Install OpenShot
+19) Install Blender/Gimp/Inkscape
+20) Install Freecad
+21) Install OrcaSlicer
+22) Install Repetier Server
+23) Install RP-Imager
+
+System Information
+24) Get Windows Product Key
+25) Run Windows Updates
+26) Add All Programs
+
+27) Exit
+
+Please select an option [1-27]:
 ```
 
 Enter the number corresponding to the action you wish to perform.
 
-### Adding or Removing Java
-
-- If Java is not installed, the script will prompt to install it.
-- If Java is installed, the script will prompt to remove it.
-- After adding or removing Java, a system restart or logging off and back on is recommended to apply the changes.
-
-### Adding Programs
-
-**Option 2: Add All Programs**  
-- Downloads and installs all programs listed in `app_list.txt` after confirming that you wish to proceed.
-
-**Option 3: Add Individual Programs**  
-- Displays a numbered list of available programs.
-- Allows you to select specific programs by entering their numbers separated by commas.
-- Enter `0` at the individual program menu to exit back to the main menu.
-
-The script will download and install the chosen programs silently if possible, logging successes and failures.
-
-### Applying Registry Settings
-
-**Option 4: Apply Registry Settings**  
-- Applies predefined registry settings for system optimizations.
-- Changes may include enabling/disabling features, modifying security settings, or adjusting performance parameters.
-- Some settings may require a system restart to take effect.
-
-### Adding Windows Features
-
-**Option 5: Add Windows Features (Telnet Client, XPS)**  
-- Enables optional Windows features such as the Telnet client and XPS viewer.
-- Useful for troubleshooting or compatibility with legacy applications.
-- Requires an active internet connection to install features.
-
-### Disabling OneDrive
-
-**Option 6: Disable OneDrive**  
-- Disables OneDrive integration in Windows.
-- Prevents OneDrive from automatically launching and syncing files.
-- Useful for users who do not use OneDrive or prefer alternative cloud storage solutions.
-
-### Managing OpenSSH Daemon
-
-**Option 7: Manage SSH Daemon (OpenSSH-Server)**  
-- Installs, enables, or disables the OpenSSH server on Windows.
-- Allows remote SSH access to the system for secure remote management.
-- Provides options to start, stop, or check the status of the SSH service.
-
-### Exiting the Script
-
-**Option 8: Exit**  
-- Ends the script execution.
-
 ---
-
-## Configuration Files
-
-### `app_list.txt` Format
-
-`app_list.txt` defines the programs to be downloaded and installed. Each line follows the format:
-
-```
-ProgramName|DownloadURL|InstallSwitches
-```
-
-- **`ProgramName`**: The display name of the program.
-- **`DownloadURL`**: Direct URL to the program's installer.
-- **`InstallSwitches`**: Command-line switches for silent or unattended installation.
-
-**Notes**:
-
-- Lines starting with `#` are treated as comments and are ignored.
-- Ensure no extra spaces around the `|` delimiter.
-- Update the install switches as needed for silent installations.
 
 ---
 
 ## Logging
 
-- The script creates a `setup_script.log` file in your Downloads directory (`%USERPROFILE%\Downloads`).
-- This log file records actions, successes, and failures.
-- Review this log if you encounter issues or need to troubleshoot.
+The script writes activity to:
+
+```text
+%USERPROFILE%\Downloads\setup_script.log
+```
+
+The log can help identify which action was attempted and where an installation or configuration step stopped. Some external tools, including WinGet and Windows system utilities, may also display additional details directly in the PowerShell window.
 
 ---
 
 ## Troubleshooting
 
-1. **Script Does Not Run as Administrator**:
-   - Ensure you've right-clicked on PowerShell and selected **"Run as administrator"**.
-   - Confirm that your account has administrative privileges.
+### The script says it must be run as administrator
 
-2. **Execution Policy Issues**:
-   - If the script won't run, adjust the execution policy as described in [Running PowerShell Scripts](#running-powershell-scripts).
+Close the current PowerShell window, open PowerShell with **Run as administrator**, return to the project folder, and run the script again.
 
-3. **Feature Installation Issues**:
-   - Ensure you have an active internet connection.
-   - Restart the system if necessary.
+### PowerShell blocks the script
 
-4. **Java or Program Installation Issues**:
-   - Check `app_list.txt` for correct URLs and install switches.
-   - Ensure sufficient disk space and stable internet connectivity.
+Use the temporary execution-policy command shown in the [Execution Policy](#execution-policy) section, then rerun the script from the same PowerShell session.
+
+### WinGet is missing or unavailable
+
+Install or update **App Installer** from Microsoft Store, then open a new PowerShell window and verify:
+
+```powershell
+winget --version
+```
+
+### An application does not install or update
+
+Some applications use publisher-managed installers or internal update systems and may not support every WinGet operation. Review the console output and the setup log, then use the application's own updater when required.
+
+### A setting does not appear immediately
+
+Some registry, service, environment-variable, and Windows feature changes require Explorer to restart, a new PowerShell session, signing out, or rebooting Windows.
+
+### Windows Update or feature installation fails
+
+Confirm the machine is online, restart Windows if an update is pending, and run the relevant menu option again.
 
 ---
 
 ## Author and License
 
-**Author**: threeofthree  
-**Date**: 2024-10-25
+**Author:** threeofthree  
+**Original date:** 2024-10-25
 
-This script is licensed under the [MIT License](https://opensource.org/licenses/MIT).  
-See the `LICENSE` file in the project root for license information.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). See the `LICENSE` file in the repository for the complete license text.
 
-**Disclaimer**: This script is intended for educational and automation purposes.  
-Always review the script and `app_list.txt` before execution. Use at your own risk.
-
----
-
-**Contact Information**:  
-For questions, suggestions, or assistance, please contact the script maintainer or consult the documentation for the programs involved.
+**Disclaimer:** This project is provided for educational and automation purposes. Review the script before running it. The script can install software, change registry values, configure services, modify networking settings, and enable or disable Windows features. Use it at your own risk.
